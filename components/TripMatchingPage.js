@@ -226,7 +226,7 @@ export default function TripMatchingPage() {
                 }
             }
         } catch (error) {
-            console.log(error.message);
+            console.log(error)
         } finally {
             setLoading(false);
         }

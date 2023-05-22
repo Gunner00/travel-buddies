@@ -176,7 +176,7 @@ export default function CurrentTrip() {
             <div className="w-screen h-[50vh]">
                 <div>
                     <h1 className="interSubheader absolute top-4 z-10 left-4 shadow-2xl bg-black text-white px-3 py-2 rounded-full">
-                        Walkify
+                        Travel Buddies
                     </h1>
                 </div>
                 <GoogleMap
