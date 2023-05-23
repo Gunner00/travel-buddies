@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 
 export default function StartTripPage() {
     const [loading, setLoading] = useState(true);
-    const [map, setMap] = useState(/** google.maps.Map */ null);
+    const [map, setMap] = useState(google.maps.Map);
     const [session, setSession] = useState(null);
     // Format = { lat: typeof float, lng: typeof float }
     const [currentLocation, setCurrentLocation] = useState(null);
