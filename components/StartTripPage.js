@@ -8,13 +8,13 @@ import {
     Marker,
     Autocomplete,
     DirectionsRenderer,
-} from "@react-google-maps/api";
+} from "@react-google-maps-api";
 import { useRouter } from "next/router";
 // Import magnifying glass from heroicons
 
 export default function StartTripPage() {
     const [loading, setLoading] = useState(true);
-    const [map, setMap] = useState(google.maps.Map);
+    const [map, setMap] = useState(/** google.maps.Map */ null);
     const [session, setSession] = useState(null);
     // Format = { lat: typeof float, lng: typeof float }
     const [currentLocation, setCurrentLocation] = useState(null);
@@ -27,7 +27,7 @@ export default function StartTripPage() {
     const destinationsRef = useRef();
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
         libraries: ["places"],
     });
     /* Calling the getCurrentUser function when the session changes. */
