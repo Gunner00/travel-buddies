@@ -27,7 +27,7 @@ export default function StartTripPage() {
     const destinationsRef = useRef();
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
+        googleMapsApiKey: "AIzaSyDx122BbS8wswMND9UI9LLYKgSwW6PnX2I",
         libraries: ["places"],
     });
     /* Calling the getCurrentUser function when the session changes. */
