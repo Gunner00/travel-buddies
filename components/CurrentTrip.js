@@ -15,7 +15,7 @@ import getCurrentUser from "../utils/getCurrentUser";
 
 export default function CurrentTrip() {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDx122BbS8wswMND9UI9LLYKgSwW6PnX2I",
+        googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
         libraries: ["places"],
     });
     const router = useRouter();
