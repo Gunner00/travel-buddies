@@ -29,7 +29,7 @@ export default function StartTripPage() {
     const destinationsRef = useRef();
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: apiKey,
+        googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
         libraries: libraries,
     });
     /* Calling the getCurrentUser function when the session changes. */

@@ -18,7 +18,7 @@ const apiKey = "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U";
 
 export default function CurrentTrip() {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: apiKey,
+        googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
         libraries: libraries,
     });
     const router = useRouter();

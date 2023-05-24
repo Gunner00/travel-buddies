@@ -27,7 +27,7 @@ export default function TripMatchingPage() {
     const [userTripRequestID, setUserTripRequestID] = useState(null);
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: apiKey,
+        googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
         libraries: libraries,
     });
 
