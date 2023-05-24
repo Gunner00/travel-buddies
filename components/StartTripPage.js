@@ -13,6 +13,8 @@ import {
 import { useRouter } from "next/router";
 // Import magnifying glass from heroicons
 
+const libraries = ["places"];
+
 export default function StartTripPage() {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState(/** google.maps.Map */ null);
@@ -29,7 +31,7 @@ export default function StartTripPage() {
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
-        libraries: ["places"],
+        libraries: libraries,
     });
     /* Calling the getCurrentUser function when the session changes. */
     useEffect(() => {

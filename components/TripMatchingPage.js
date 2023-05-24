@@ -10,6 +10,8 @@ import {
     DirectionsRenderer,
 } from "@react-google-maps/api";
 
+const libraries = ["places", "geometry"];
+
 export default function TripMatchingPage() {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState(/** google.maps.Map */ null);
@@ -25,7 +27,7 @@ export default function TripMatchingPage() {
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
-        libraries: ["places", "geometry"],
+        libraries: libraries,
     });
 
     useEffect(() => {

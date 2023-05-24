@@ -13,10 +13,12 @@ import UniversalFadeAnimation from "./UniversalFadeComponent";
 
 import getCurrentUser from "../utils/getCurrentUser";
 
+const libraries = ["places"];
+
 export default function CurrentTrip() {
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
-        libraries: ["places"],
+        libraries: libraries,
     });
     const router = useRouter();
     const { tripRequest1ID, tripRequest2ID } = router.query;
