@@ -9,7 +9,10 @@ import {
     Autocomplete,
     DirectionsRenderer,
 } from "@react-google-maps/api";
+
 const libraries = ["places", "geometry"];
+const apiKey = "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U";
+
 export default function TripMatchingPage() {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState(/** google.maps.Map */ null);
@@ -24,7 +27,7 @@ export default function TripMatchingPage() {
     const [userTripRequestID, setUserTripRequestID] = useState(null);
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: 'AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U',
+        googleMapsApiKey: apiKey,
         libraries: libraries,
     });
 
