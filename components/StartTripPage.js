@@ -11,8 +11,6 @@ import {
 } from "@react-google-maps/api";
 import { useRouter } from "next/router";
 // Import magnifying glass from heroicons
-const libraries = ["places", "geometry"];
-const apiKey = "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U";
 
 export default function StartTripPage() {
     const [loading, setLoading] = useState(true);
@@ -27,10 +25,10 @@ export default function StartTripPage() {
     const router = useRouter();
 
     const destinationsRef = useRef();
-    
+
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
-        libraries: libraries,
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+        libraries: ["places"],
     });
     /* Calling the getCurrentUser function when the session changes. */
     useEffect(() => {
