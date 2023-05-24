@@ -13,7 +13,7 @@ import {
 import { useRouter } from "next/router";
 // Import magnifying glass from heroicons
 
-const libraries = ["places"];
+const libraries = ["places", "geometry"];
 
 export default function StartTripPage() {
     const [loading, setLoading] = useState(true);

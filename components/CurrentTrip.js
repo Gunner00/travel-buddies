@@ -13,7 +13,7 @@ import UniversalFadeAnimation from "./UniversalFadeComponent";
 
 import getCurrentUser from "../utils/getCurrentUser";
 
-const libraries = ["places"];
+const libraries = ["places", "geometry"];
 
 export default function CurrentTrip() {
     const { isLoaded } = useLoadScript({
