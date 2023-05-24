@@ -9,7 +9,7 @@ import {
     Autocomplete,
     DirectionsRenderer,
 } from "@react-google-maps/api";
-
+const libraries = ["places", "geometry"];
 export default function TripMatchingPage() {
     const [loading, setLoading] = useState(true);
     const [map, setMap] = useState(/** google.maps.Map */ null);
@@ -25,7 +25,7 @@ export default function TripMatchingPage() {
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
-        libraries: ["places", "geometry"],
+        libraries: libraries,
     });
 
     useEffect(() => {
