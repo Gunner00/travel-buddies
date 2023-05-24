@@ -9,6 +9,7 @@ import {
     Autocomplete,
     DirectionsRenderer,
 } from "@react-google-maps/api";
+
 import { useRouter } from "next/router";
 // Import magnifying glass from heroicons
 
