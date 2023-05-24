@@ -27,7 +27,7 @@ export default function StartTripPage() {
     const router = useRouter();
 
     const destinationsRef = useRef();
-
+    
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyDVRRRtrryvgO1teR3oPktKzkL3bAEmf0U",
         libraries: libraries,
