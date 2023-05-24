@@ -1,6 +1,5 @@
 import SplashScreen from "../components/SplashScreen";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import dotenv from 'dotenv';
 
 
 export default function Home() {
