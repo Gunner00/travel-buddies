@@ -293,7 +293,7 @@ export default function TripMatchingPage() {
                     }}
                     zoom={16}
                     // 29.717154, -95.404182 is rice university
-                    center={{ lat: 29.717, lng: -95.404 }}
+                    center={{ lat: 31.37801, lng: 74.23187 }}
                     options={{
                         streetViewControl: false,
                         fullscreenControl: false,
