@@ -8,7 +8,7 @@ import {
     Marker,
     Autocomplete,
     DirectionsRenderer,
-} from "@react-google-maps-api";
+} from "@react-google-maps/api";
 import { useRouter } from "next/router";
 // Import magnifying glass from heroicons
 const libraries = ["places", "geometry"];
