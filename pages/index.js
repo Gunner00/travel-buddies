@@ -10,7 +10,6 @@ export default function Home() {
     mapContainerStyle={{ width: '100%', height: '400px' }}
     zoom={10} // Adjust the zoom level as needed
   >
-    <Marker position={{ lat: 37.7749, lng: -122.4194 }} />
   </GoogleMap>
 </LoadScript>
 
