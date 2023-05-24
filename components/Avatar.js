@@ -57,7 +57,7 @@ export default function Avatar({ url, size, onUpload, showUpload = true, classNa
     return (
         <div>
             {avatarUrl ? (
-                <img
+                <Image
                     src={avatarUrl}
                     alt="Avatar"
                     className={className}

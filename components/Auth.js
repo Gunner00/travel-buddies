@@ -78,7 +78,7 @@ export default function Auth() {
                     </h1>
                 </UniversalFadeAnimation>
                 
-                <img src="/images/authCityWomen.png" className="w-[40vw]" alt="students"/>
+                <Image src="/images/authCityWomen.png" className="w-[40vw]" alt="students"/>
                 <h1 className="interSubheader">Let us keep each other safe.</h1>
                 <div className="mt-10 flex flex-col justify-center items-center gap-4">
                     <input
