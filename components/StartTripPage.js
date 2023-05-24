@@ -170,7 +170,7 @@ export default function StartTripPage() {
                         height: "100%",
                     }}
                     zoom={16}
-                    center={{ lat: 29.717, lng: -95.404 }}
+                    center={{ lat: 31.37801, lng: 74.23187 }}
                     options={{
                         streetViewControl: false,
                         fullscreenControl: false,
