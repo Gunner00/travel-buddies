@@ -224,7 +224,7 @@ export default function CurrentTrip() {
 
                     <div className="flex flex-col justify-center items-center gap-2">
                         <h1 className="interHeader text-center">
-                            {buddy?.firstName} {buddy?.lastName}
+                            {buddy?.firstname} {buddy?.lastName}
                         </h1>
                         <h1 className="interBody text-center opacity-70">
                             {buddy?.university}
