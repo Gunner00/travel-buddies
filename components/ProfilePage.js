@@ -19,7 +19,7 @@ export default function Account({ session }) {
 
     useEffect(() => {
         getProfile();
-    }, [getProfile]);
+    }, []);
 
     useEffect(() => {
         if (filledInfo === true) {
