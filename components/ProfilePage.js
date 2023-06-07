@@ -54,9 +54,9 @@ export default function Account({ session }) {
             setLoading(true);
             const user = await getCurrentUser();
             let { data, error, status } = await supabase
-                .from("profiles")
-                .select("username, firstname, lastName, university, avatar_url")
-                .eq("id", user.id)
+                .from('profiles')
+                .select(`username, firstname, lastName, university, avatar_url`)
+                .eq('id', user.id)
                 .single();
 
             if (error && status !== 406) {
@@ -109,7 +109,7 @@ export default function Account({ session }) {
                 updated_at: new Date(),
             };
 
-            let { error } = await supabase.from("profiles").upsert(updates);
+            let { error } = await supabase.from('profiles').upsert(updates);
 
             if (error) {
                 throw error;
@@ -138,7 +138,7 @@ export default function Account({ session }) {
             const user = await getCurrentUser();
 
             let { data, error, status } = await supabase
-                .from("profiles")
+                .from('profiles')
                 .select(`username, firstname, lastName, university, avatar_url`)
                 .eq("id", user.id)
                 .single();
