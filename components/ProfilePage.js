@@ -8,7 +8,7 @@ import UniversalFadeAnimation from "./UniversalFadeComponent";
 export default function Account({ session }) {
     const [loading, setLoading] = useState(true);
     const [username, setUsername] = useState("");
-    const [firstname, setFirstName] = useState("");
+    const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [university, setUniversity] = useState("");
     const [avatar_url, setAvatarUrl] = useState(null);
@@ -54,9 +54,9 @@ export default function Account({ session }) {
             setLoading(true);
             const user = await getCurrentUser();
             let { data, error, status } = await supabase
-                .from('profiles')
-                .select(`username, firstname, lastName, university, avatar_url`)
-                .eq('id', user.id)
+                .from("profiles")
+                .select(`username, firstName, lastName, university, avatar_url`)
+                .eq("id", user.id)
                 .single();
 
             if (error && status !== 406) {
@@ -65,13 +65,13 @@ export default function Account({ session }) {
 
             if (data) {
                 setUsername(data.username);
-                setFirstName(data.firstname);
+                setFirstName(data.firstName);
                 setLastName(data.lastName);
                 setUniversity(data.university);
                 setAvatarUrl(data.avatar_url);
                 if (
                     data.username !== null &&
-                    data.firstname !== null &&
+                    data.firstName !== null &&
                     data.lastName !== null &&
                     data.university !== null
                 ) {
@@ -87,7 +87,7 @@ export default function Account({ session }) {
 
     async function updateProfile({
         username,
-        firstname,
+        firstName,
         lastName,
         university,
         avatar_url,
@@ -96,20 +96,20 @@ export default function Account({ session }) {
             setLoading(true);
             const user = await getCurrentUser();
             username = username.trim();
-            firstname = firstname.trim();
+            firstName = firstName.trim();
             lastName = lastName.trim();
             university = university.trim();
             const updates = {
                 id: user.id,
                 username,
-                firstname,
+                firstName,
                 lastName,
                 university,
                 avatar_url,
                 updated_at: new Date(),
             };
 
-            let { error } = await supabase.from('profiles').upsert(updates);
+            let { error } = await supabase.from("profiles").upsert(updates);
 
             if (error) {
                 throw error;
@@ -138,8 +138,8 @@ export default function Account({ session }) {
             const user = await getCurrentUser();
 
             let { data, error, status } = await supabase
-                .from('profiles')
-                .select(`username, firstname, lastName, university, avatar_url`)
+                .from("profiles")
+                .select(`username, firstName, lastName, university, avatar_url`)
                 .eq("id", user.id)
                 .single();
 
@@ -152,7 +152,7 @@ export default function Account({ session }) {
                 // filled out, then push to dashboard
                 if (
                     data.username &&
-                    data.firstname &&
+                    data.firstName &&
                     data.lastName &&
                     data.university &&
                     data.avatar_url
@@ -168,6 +168,7 @@ export default function Account({ session }) {
             setLoading(false);
         }
     };
+
 
     return (
         <>
