@@ -54,7 +54,7 @@ export default function Account({ session }) {
             setLoading(true);
             const user = await getCurrentUser();
             let { data, error, status } = await supabase
-                .from('profiles')
+                .from("profiles")
                 .select(`username, firstname, lastName, university, avatar_url`)
                 .eq("id", user.id)
                 .single();
