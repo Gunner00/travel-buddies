@@ -195,7 +195,7 @@ export default function Account({ session }) {
                                 setAvatarUrl(url);
                                 updateProfile({
                                     username,
-                                    firstname,
+                                    firstName,
                                     lastName,
                                     university,
                                     avatar_url: url,
@@ -243,18 +243,18 @@ export default function Account({ session }) {
                             </div>
                             <div>
                                 <label
-                                    htmlFor="firstname"
+                                    htmlFor="firstName"
                                     className="interBody block text-sm font-medium text-gray-700"
                                 >
                                     First Name
                                 </label>
                                 <div className="mt-1">
                                     <input
-                                        id="firstname"
+                                        id="firstName"
                                         type="text"
                                         required={true}
                                         className="interBody block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                                        value={firstname || ""}
+                                        value={firstName || ""}
                                         onChange={(e) =>
                                             setFirstName(e.target.value)
                                         }
@@ -310,7 +310,7 @@ export default function Account({ session }) {
                                     onClick={() =>
                                         updateProfile({
                                             username,
-                                            firstname,
+                                            firstName,
                                             lastName,
                                             university,
                                             avatar_url,
