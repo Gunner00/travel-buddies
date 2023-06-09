@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabaseClient";
-import Image from "next/image";
 
 export default function Avatar({ url, size, onUpload, showUpload = true, className="w-48 h-48 lg:w-60 lg:h-60 rounded-md" }) {
     const [avatarUrl, setAvatarUrl] = useState(null);
