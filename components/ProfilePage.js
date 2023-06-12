@@ -18,6 +18,7 @@ export default function Account({ session }) {
     const router = useRouter();
 
     useEffect(() => {
+        console.log(session);
         getProfile();
     }, []);
 
