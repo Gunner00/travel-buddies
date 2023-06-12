@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
-import Avatar from "./Avatar";
+import Avatar from "./Avatar"
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import UniversalFadeAnimation from "./UniversalFadeComponent";
