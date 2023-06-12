@@ -36,6 +36,7 @@ export default function ProfilePage() {
             if (session) {
               setSession(session);
               router.push("/");
+              console.log("reloading")
             } else {
               // Handle the case when the user is signed out
               setSession(null);
