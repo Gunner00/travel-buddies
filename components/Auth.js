@@ -13,7 +13,7 @@ export default function Auth() {
     // If they do, set the session object in state
     // If they don't, send them to the Auth component
     // to sign in
-    useEffect(() => {
+    /**useEffect(() => {
         let mounted = true;
 
         async function getInitialSession() {
@@ -45,7 +45,7 @@ export default function Auth() {
 
             subscription?.unsubscribe();
         };
-    }, [router]);
+    }, [router]);**/
     
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
