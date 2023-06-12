@@ -1,5 +1,4 @@
-import { supabase } from "../utils/supabaseClient";
-
+import { supabase } from "./supabaseClient";
 /**
     * > Get the current user from the session
     * @returns The current user's information.
