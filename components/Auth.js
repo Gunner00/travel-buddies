@@ -25,7 +25,7 @@ export default function Auth() {
             if (mounted) {
                 if (session) {
                     setSession(session);
-                    router.push("../pages/profilePage.js");
+                    router.push("/profilePage.js");
                 }
 
                 setIsLoading(false);
