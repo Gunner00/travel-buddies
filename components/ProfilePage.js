@@ -17,10 +17,10 @@ export default function Account({ session }) {
     // Next router
     const router = useRouter();
 
-    useEffect(() => {
+    /**useEffect(() => {
         console.log(session);
         getProfile();
-    }, []);
+    }, []);**/
 
     useEffect(() => {
         if (filledInfo === true) {
