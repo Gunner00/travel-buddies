@@ -55,7 +55,7 @@ export default function Profile({ session }) {
             const user = await getCurrentUser();
             let { data, error, status } = await supabase
                 .from("profiles")
-                .select(`*`)
+                .select("*")
                 .eq("id", user.id)
                 .single();
 
@@ -139,7 +139,7 @@ export default function Profile({ session }) {
 
             let { data, error, status } = await supabase
                 .from("profiles")
-                .select(`*`)
+                .select("*")
                 .eq("id", user.id)
                 .single();
 
