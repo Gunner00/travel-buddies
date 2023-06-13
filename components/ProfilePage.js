@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import UniversalFadeAnimation from "./UniversalFadeComponent";
 
-export default function Account({ session }) {
+export default function Profile({ session }) {
     const [loading, setLoading] = useState(true);
     const [username, setUsername] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -55,7 +55,7 @@ export default function Account({ session }) {
             const user = await getCurrentUser();
             let { data, error, status } = await supabase
                 .from("profiles")
-                .select("*")
+                .select("username, firstName, lastName, university, avatar_url")
                 .eq("id", user.id)
                 .single();
 

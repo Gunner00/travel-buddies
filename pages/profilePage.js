@@ -32,19 +32,13 @@ export default function ProfilePage() {
 
         getInitialSession();
 
-        const { subscription } = supabase.auth.onAuthStateChange((_event, session) => {
-            if (session) {
-              setSession(session);
-              router.push("/");
-              console.log("reloading")
-            } else {
-              // Handle the case when the user is signed out
-              setSession(null);
-              // Optionally redirect to a different route for signed out users
-              router.push("/Auth");
+        const { subscription } = supabase.auth.onAuthStateChange(
+            (_event, session) => {
+                setSession(session);
+                console.log("hello here is the error")
+                router.push("/");
             }
-          });
-          
+        );
 
         return () => {
             mounted = false;
