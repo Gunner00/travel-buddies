@@ -139,7 +139,7 @@ export default function Profile({ session }) {
 
             let { data, error, status } = await supabase
                 .from("profiles")
-                .select("*")
+                .select("username, firstName, lastName, university, avatar_url")
                 .eq("id", user.id)
                 .single();
 
