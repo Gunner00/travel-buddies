@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 import UniversalFadeAnimation from "./UniversalFadeComponent";
 import { toast } from "react-hot-toast";
+
 export default function Auth() {
     const [isLoading, setIsLoading] = useState(true);
     const [session, setSession] = useState(null);
