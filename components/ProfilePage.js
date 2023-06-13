@@ -57,7 +57,7 @@ export default function Account({ session }) {
                 .from("profiles")
                 .select("username, firstName, lastName, university, avatar_url")
                 .eq("id", user.id)
-                .single();
+                .single(1);
 
             if (error && status !== 406) {
                 throw error;
@@ -141,7 +141,7 @@ export default function Account({ session }) {
                 .from("profiles")
                 .select("username, firstName, lastName, university, avatar_url")
                 .eq("id", user.id)
-                .single();
+                .single(1);
 
             if (error && status !== 406) {
                 throw error;
