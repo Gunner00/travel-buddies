@@ -14,6 +14,7 @@ export default function ProfilePage() {
     // to sign in
     useEffect(() => {
         let mounted = true;
+        let isAuthenticated = false;
 
         async function getInitialSession() {
             const {
@@ -24,6 +25,7 @@ export default function ProfilePage() {
             if (mounted) {
                 if (session) {
                     setSession(session);
+                    isAuthenticated = true;
                 }
 
                 setIsLoading(false);
@@ -35,15 +37,17 @@ export default function ProfilePage() {
         const { subscription } = supabase.auth.onAuthStateChange(
             (_event, session) => {
                 setSession(session);
-                console.log("hello")
-                router.push("/");
+                isAuthenticated = !!session;
             }
         );
-        
+
         return () => {
             mounted = false;
 
             subscription?.unsubscribe();
+            if (isAuthenticated) {
+                router.push("/profilePage");
+            }
         };
     }, [router]);
     
