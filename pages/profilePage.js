@@ -36,7 +36,7 @@ export default function ProfilePage() {
             (_event, session) => {
                 setSession(session);
                 console.log("hello")
-                router.push("/profilePage");
+                router.push("/");
             }
         );
 
