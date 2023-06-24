@@ -58,7 +58,7 @@ export default function Auth() {
                 // throw new Error("Please use a Riphah email");
                 toast("Please enter a Riphah International University email and try again.")
             }
-            const { error } = await supabase.auth.signInWithOtp({ email });
+            let { error } = await supabase.auth.signInWithOtp({ email });
             if (error) throw error;
             toast.success("Check your email for the login link!");
         } catch (error) {
