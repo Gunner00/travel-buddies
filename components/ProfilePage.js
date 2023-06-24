@@ -9,7 +9,7 @@ export default function Account({ session }) {
     const [loading, setLoading] = useState(true);
     const [username, setUsername] = useState("");
     const [firstname, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [lastname, setLastName] = useState("");
     const [university, setUniversity] = useState("");
     const [avatar_url, setAvatarUrl] = useState(null);
     const [filledInfo, setFilledInfo] = useState(false);
@@ -55,7 +55,7 @@ export default function Account({ session }) {
             const user = await getCurrentUser();
             let { data, error, status } = await supabase
                 .from("profiles")
-                .select("username, firstname, lastName, university, avatar_url")
+                .select("username, firstname, lastname, university, avatar_url")
                 .eq("id", user.id)
                 .single(1);
 
@@ -66,13 +66,13 @@ export default function Account({ session }) {
             if (data) {
                 setUsername(data.username);
                 setFirstName(data.firstname);
-                setLastName(data.lastName);
+                setLastName(data.lastname);
                 setUniversity(data.university);
                 setAvatarUrl(data.avatar_url);
                 if (
                     data.username !== null &&
                     data.firstname !== null &&
-                    data.lastName !== null &&
+                    data.lastname !== null &&
                     data.university !== null
                 ) {
                     setFilledInfo(true);
@@ -88,7 +88,7 @@ export default function Account({ session }) {
     async function updateProfile({
         username,
         firstname,
-        lastName,
+        lastname,
         university,
         avatar_url,
     }) {
@@ -97,13 +97,13 @@ export default function Account({ session }) {
             const user = await getCurrentUser();
             username = username.trim();
             firstname = firstname.trim();
-            lastName = lastName.trim();
+            lastname = lastname.trim();
             university = university.trim();
             const updates = {
                 id: user.id,
                 username,
                 firstname,
-                lastName,
+                lastname,
                 university,
                 avatar_url,
                 updated_at: new Date(),
@@ -139,7 +139,7 @@ export default function Account({ session }) {
 
             let { data, error, status } = await supabase
                 .from("profiles")
-                .select("username, firstname, lastName, university, avatar_url")
+                .select("username, firstname, lastname, university, avatar_url")
                 .eq("id", user.id)
                 .single(1);
 
@@ -153,7 +153,7 @@ export default function Account({ session }) {
                 if (
                     data.username &&
                     data.firstname &&
-                    data.lastName &&
+                    data.lastname &&
                     data.university &&
                     data.avatar_url
                 ) {
@@ -195,7 +195,7 @@ export default function Account({ session }) {
                                 updateProfile({
                                     username,
                                     firstname,
-                                    lastName,
+                                    lastname,
                                     university,
                                     avatar_url: url,
                                 });
@@ -262,18 +262,18 @@ export default function Account({ session }) {
                             </div>
                             <div>
                                 <label
-                                    htmlFor="lastName"
+                                    htmlFor="lastname"
                                     className="interBody block text-sm font-medium text-gray-700"
                                 >
                                     Last Name
                                 </label>
                                 <div className="mt-1">
                                     <input
-                                        id="lastName"
+                                        id="lastname"
                                         type="text"
                                         required={true}
                                         className="interBody block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                                        value={lastName || ""}
+                                        value={lastname || ""}
                                         onChange={(e) =>
                                             setLastName(e.target.value)
                                         }
@@ -310,7 +310,7 @@ export default function Account({ session }) {
                                         updateProfile({
                                             username,
                                             firstname,
-                                            lastName,
+                                            lastname,
                                             university,
                                             avatar_url,
                                         })
