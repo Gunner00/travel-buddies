@@ -35,7 +35,7 @@ export default function ProfilePage() {
         const { subscription } = supabase.auth.onAuthStateChange(
             (_event, session) => {
                 setSession(session);
-                console.log("hello here is the error")
+                console.log("hello")
                 router.push("/");
             }
         );
