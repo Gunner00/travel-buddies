@@ -36,8 +36,9 @@ export default function ProfilePage() {
             (_event, session) => {
                 setSession(session);
                 console.log("hello")
-                router.push("/");
-            }
+                if (router.pathname !== "/") {
+                    router.push("/");
+                  }            }
         );
 
         return () => {
