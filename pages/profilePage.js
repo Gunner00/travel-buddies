@@ -36,11 +36,10 @@ export default function ProfilePage() {
             (_event, session) => {
                 setSession(session);
                 console.log("hello")
-                if (router.pathname !== "/") {
-                    router.push("/");
-                  }            }
+                router.push("/");
+            }
         );
-
+        
         return () => {
             mounted = false;
 
