@@ -3,7 +3,7 @@ import { supabase } from "../utils/supabaseClient";
 import SplashScreen from "../components/SplashScreen";
 import Profile from "../components/ProfilePage";
 import Auth from "../components/Auth";
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation";
 export default function ProfilePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [session, setSession] = useState(null);
