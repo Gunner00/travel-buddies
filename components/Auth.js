@@ -17,20 +17,18 @@ export default function Auth() {
         let mounted = true;
 
         async function getInitialSession() {
-            const {
-                data: { session },
-            } = await supabase.auth.getSession();
-
+            const { data: { session } } = await supabase.auth.getSession();
+          
             // only update the react state if the component is still mounted
             if (mounted) {
-                if (session) {
-                    setSession(session);
-                    router.push("/profilePage");
-                }
-
-                setIsLoading(false);
+              if (session && router.pathname !== "/profilePage") {
+                setSession(session);
+                router.push("/profilePage");
+              }
+          
+              setIsLoading(false);
             }
-        }
+          }
 
         getInitialSession();
 
