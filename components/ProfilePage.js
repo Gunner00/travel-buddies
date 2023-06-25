@@ -141,7 +141,7 @@ export default function Account({ session }) {
                 .from("profiles")
                 .select("username, firstname, lastname, university, avatar_url")
                 .eq("id", user.id)
-                .single(1);
+                .single();
 
             if (error && status !== 406) {
                 throw error;
