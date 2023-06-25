@@ -67,7 +67,7 @@ export default function RatingComponent() {
         <div className="flex flex-col justify-center items-center h-screen w-screen gap-10">
             <div>
                 <h1 className="interSubheader absolute top-10 z-10 left-4 shadow-2xl bg-black text-white px-3 py-2 rounded-full">
-                    Walkify
+                    Travel Buddies
                 </h1>
             </div>
             <h1 className="interHeader text-center">
