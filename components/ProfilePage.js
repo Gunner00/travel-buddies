@@ -132,7 +132,7 @@ export default function Account({ session }) {
             toast.error("Please fill in all the information!");
         }
     } catch (error) {
-        toast.error("Error occured")
+        toast.error("Error occured");
     }
     };
 
