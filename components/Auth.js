@@ -53,12 +53,12 @@ export default function Auth() {
             setLoading(true);
             // If the email is not a Riphah email, throw an error
             if (!email.endsWith("@riphah.edu.pk")) {
-                // throw new Error("Please use a Riphah email");
                 toast("Please enter a Riphah International University email and try again.")
-            }
+            } else {
             let { error } = await supabase.auth.signInWithOtp({ email });
             if (error) throw error;
             toast.success("Check your email for the login link!");
+            }
         } catch (error) {
             toast(error.error_description || error.message);
         } finally {
