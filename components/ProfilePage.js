@@ -123,7 +123,7 @@ export default function Account({ session }) {
         }
     }
 
-    const handleGetStartedClick = async () => {
+    let handleGetStartedClick = async () => {
         let userFilledInfoDatabase = await checkIfUserFilledInfo();
         if (userFilledInfoDatabase && router.pathname !== "/startTripPage") {
             setFilledInfo(userFilledInfoDatabase);
