@@ -42,7 +42,7 @@ useEffect(() => {
 
     subscription?.unsubscribe();
     if (isAuthenticated) {
-      router.push("/profilePage");
+      router.push("/startTripPage");
     }
   };
 }, [router, isAuthenticated]);
