@@ -340,7 +340,7 @@ export default function Account({ session }) {
             {filledInfo && (
                 <button
                     className="fixed flex rounded-full justify-center items-center gap-4 bottom-10 left-0 right-0 w-[95vw] m-auto bg-black text-white text-2xl font-medium px-10 py-4"
-                    onClick={() => router.push("/startTripPage")}
+                    onClick={ () => handleGetStartedClick()}
                 >
                     Get Started
                     <svg

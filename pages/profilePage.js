@@ -3,7 +3,7 @@ import { supabase } from "../utils/supabaseClient";
 import SplashScreen from "../components/SplashScreen";
 import Profile from "../components/ProfilePage";
 import Auth from "../components/Auth";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
 export default function ProfilePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [session, setSession] = useState(null);
@@ -12,41 +12,40 @@ export default function ProfilePage() {
     // If they do, set the session object in state
     // If they don't, send them to the Auth component
     // to sign in
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    useEffect(() => {
+        let mounted = true;
 
-useEffect(() => {
-  let mounted = true;
+        async function getInitialSession() {
+            const {
+                data: { session },
+            } = await supabase.auth.getSession();
 
-  async function getInitialSession() {
-    const { data: { session } } = await supabase.auth.getSession();
+            // only update the react state if the component is still mounted
+            if (mounted) {
+                if (session) {
+                    setSession(session);
+                }
 
-    if (mounted) {
-      if (session) {
-        setSession(session);
-        setIsAuthenticated(!!session);
-      }
+                setIsLoading(false);
+            }
+        }
 
-      setIsLoading(false);
-    }
-  }
+        getInitialSession();
 
-  getInitialSession();
+        const { subscription } = supabase.auth.onAuthStateChange(
+            (_event, session) => {
+                setSession(session);
+                console.log("hello")
+                router.push("/");
+            }
+        );
 
-  const { subscription } = supabase.auth.onAuthStateChange((_event, session) => {
-    setSession(session);
-    setIsAuthenticated(!!session);
-  });
+        return () => {
+            mounted = false;
 
-  return () => {
-    mounted = false;
-
-    subscription?.unsubscribe();
-    if (isAuthenticated) {
-      router.push("/startTripPage");
-    }
-  };
-}, [router, isAuthenticated]);
-
+            subscription?.unsubscribe();
+        };
+    }, [router]);
     
     return (
         <div className="">
