@@ -125,14 +125,12 @@ export default function Account({ session }) {
 
     let handleGetStartedClick = async () => {
         let userFilledInfoDatabase = await checkIfUserFilledInfo();
-        if (userFilledInfoDatabase && router.pathname !== "/startTripPage") {
-          setFilledInfo(userFilledInfoDatabase);
-          await router.push("/startTripPage");
-          // The code below this line will execute after the navigation is complete
+        if (userFilledInfoDatabase) {
+            router.push("/startTripPage");
         } else {
-          toast.error("Please fill in all the information!");
+            toast.error("Please fill in all the information!");
         }
-      };
+    };
       
 
     let checkIfUserFilledInfo = async () => {
