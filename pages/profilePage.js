@@ -12,44 +12,41 @@ export default function ProfilePage() {
     // If they do, set the session object in state
     // If they don't, send them to the Auth component
     // to sign in
-    useEffect(() => {
-        let mounted = true;
-        let isAuthenticated = false;
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-        async function getInitialSession() {
-            const {
-                data: { session },
-            } = await supabase.auth.getSession();
+useEffect(() => {
+  let mounted = true;
 
-            // only update the react state if the component is still mounted
-            if (mounted) {
-                if (session) {
-                    setSession(session);
-                    isAuthenticated = true;
-                }
+  async function getInitialSession() {
+    const { data: { session } } = await supabase.auth.getSession();
 
-                setIsLoading(false);
-            }
-        }
+    if (mounted) {
+      if (session) {
+        setSession(session);
+        setIsAuthenticated(!!session);
+      }
 
-        getInitialSession();
+      setIsLoading(false);
+    }
+  }
 
-        const { subscription } = supabase.auth.onAuthStateChange(
-            (_event, session) => {
-                setSession(session);
-                isAuthenticated = !!session;
-            }
-        );
+  getInitialSession();
 
-        return () => {
-            mounted = false;
+  const { subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+    setSession(session);
+    setIsAuthenticated(!!session);
+  });
 
-            subscription?.unsubscribe();
-            if (isAuthenticated) {
-                router.push("/profilePage");
-            }
-        };
-    }, [router]);
+  return () => {
+    mounted = false;
+
+    subscription?.unsubscribe();
+    if (isAuthenticated) {
+      router.push("/profilePage");
+    }
+  };
+}, [router, isAuthenticated]);
+
     
     return (
         <div className="">
