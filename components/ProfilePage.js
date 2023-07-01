@@ -127,10 +127,10 @@ export default function Account({ session }) {
         let userFilledInfoDatabase = await checkIfUserFilledInfo();
         if (userFilledInfoDatabase) {
             router.push("/pages/startTripPage.js");
+            console.log("i am accessing");
         } else {
             toast.error("Please fill in all the information!");
         }
-        console.log("i am accessing");
     };
       
 
