@@ -46,7 +46,7 @@ export default function ProfilePage() {
 
             subscription?.unsubscribe();
             if (isAuthenticated) {
-                router.push("/");
+                router.push("/startTripPage");
             }
         };
     }, [router]);
