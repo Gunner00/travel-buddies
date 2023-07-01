@@ -3,7 +3,7 @@ import { supabase } from "../utils/supabaseClient";
 import SplashScreen from "../components/SplashScreen";
 import Profile from "../components/ProfilePage";
 import Auth from "../components/Auth";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 export default function ProfilePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [session, setSession] = useState(null);
@@ -14,6 +14,7 @@ export default function ProfilePage() {
     // to sign in
     useEffect(() => {
         let mounted = true;
+        let isAuthenticated = false;
 
         async function getInitialSession() {
             const {
@@ -24,6 +25,7 @@ export default function ProfilePage() {
             if (mounted) {
                 if (session) {
                     setSession(session);
+                    isAuthenticated = true;
                 }
 
                 setIsLoading(false);
@@ -35,8 +37,7 @@ export default function ProfilePage() {
         const { subscription } = supabase.auth.onAuthStateChange(
             (_event, session) => {
                 setSession(session);
-                console.log("hello")
-                router.push("/");
+                isAuthenticated = !!session;
             }
         );
 
@@ -44,6 +45,9 @@ export default function ProfilePage() {
             mounted = false;
 
             subscription?.unsubscribe();
+            if (isAuthenticated) {
+                router.push("/");
+            }
         };
     }, [router]);
     
