@@ -7,6 +7,3 @@ export default function startTripPage() {
     <StartTripPage />
   )
 }
-const [showChat, setShowChat] = useState(false);
-<button onClick={() => setShowChat(true)}>Open Chat</button>
-{showChat && <ChatComponent currentTrip={currentTrip} />}
