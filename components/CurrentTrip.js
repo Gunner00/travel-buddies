@@ -188,7 +188,7 @@ export default function CurrentTrip() {
                     }}
                     zoom={16}
                     // lat: 31.37801, lng: 74.23187 is riphah university
-                    center={{ lat: origin_lat, lng: origin_lon }}
+                    center={{ lat: 31.37801, lng: 74.23187 }}
                     options={{
                         streetViewControl: false,
                         fullscreenControl: false,
