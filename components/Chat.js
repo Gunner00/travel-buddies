@@ -4,10 +4,13 @@ import { supabase } from '../utils/supabaseClient';
 function Chat() {
     const [currentUser, setCurrentUser] = useState(null);
     const [recipientUser, setRecipientUser] = useState(null);
-  
+    const [messages, setMessages] = useState([]);
+
     useEffect(() => {
       fetchCurrentUser();
       fetchRecipientUser();
+      fetchMessages();
+
     }, []);
   
     async function fetchCurrentUser() {
