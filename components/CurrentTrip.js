@@ -211,7 +211,7 @@ export default function CurrentTrip() {
                     </h1>
                     {statusMessage !== "Loading..." && (
                         <div className="bg-black text-white w-14 h-14 flex justify-center items-center">
-                            <button className="interBody text-2xl" onClick={                                        router.push("/Chat")
+                            <button className="interBody text-2xl" onClick={                                        router.push("/chat")
 }>Chat</button>
                         </div>
                     )}
