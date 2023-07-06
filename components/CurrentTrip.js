@@ -173,6 +173,10 @@ export default function CurrentTrip() {
     if (!isLoaded) {
         return <div>Loading...</div>
     }
+
+    const handleChat = () => {
+        router.push("/chat");
+    }
     return (
         <>
             <div className="w-screen h-[50vh]">
@@ -211,8 +215,7 @@ export default function CurrentTrip() {
                     </h1>
                     {statusMessage !== "Loading..." && (
                         <div className="bg-black text-white w-14 h-14 flex justify-center items-center">
-                            <button className="interBody text-2xl" onClick={                                        router.push("/chat")
-}>Chat</button>
+                            <button className="interBody text-2xl" onClick={handleChat}>Chat</button>
                         </div>
                     )}
                 </div>
