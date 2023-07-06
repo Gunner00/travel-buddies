@@ -188,7 +188,7 @@ export default function CurrentTrip() {
                     }}
                     zoom={16}
                     // lat: 31.37801, lng: 74.23187 is riphah university
-                    center={{ lat: 31.37801, lng: 74.23187 }}
+                    center={{ lat: origin_lat, lng: origin_lon }}
                     options={{
                         streetViewControl: false,
                         fullscreenControl: false,
@@ -211,7 +211,7 @@ export default function CurrentTrip() {
                     </h1>
                     {statusMessage !== "Loading..." && (
                         <div className="bg-black text-white w-14 h-14 flex justify-center items-center">
-                            <h1 className="interBody text-2xl">Now</h1>
+                            <button className="interBody text-2xl" onClick={handleStartChat}>Chat</button>
                         </div>
                     )}
                 </div>
