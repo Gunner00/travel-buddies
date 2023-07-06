@@ -1,14 +1,48 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 
-function Chat({ currentUser, recipientUser }) {
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-
+function Chat() {
+    const [currentUser, setCurrentUser] = useState(null);
+    const [recipientUser, setRecipientUser] = useState(null);
+  
+    useEffect(() => {
+      fetchCurrentUser();
+      fetchRecipientUser();
+    }, []);
+  
+    async function fetchCurrentUser() {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('id')
+        .eq('username', user.username)
+        .single();
+  
+      if (error) {
+        console.error('Error fetching current user:', error);
+      } else {
+        setCurrentUser(data);
+      }
+    }
+  
+    async function fetchRecipientUser() {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('id')
+        .eq('username', user.username)
+        .single();
+  
+      if (error) {
+        console.error('Error fetching recipient user:', error);
+      } else {
+        setRecipientUser(data);
+      }
+    }
   useEffect(() => {
     fetchMessages();
     subscribeToMessages();
   }, []);
+
+
 
   async function fetchMessages() {
     const { data, error } = await supabase
