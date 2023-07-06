@@ -281,7 +281,7 @@ export default function TripMatchingPage() {
     }
 
     if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
     return (
         <>

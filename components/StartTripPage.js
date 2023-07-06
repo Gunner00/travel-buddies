@@ -156,7 +156,7 @@ export default function StartTripPage() {
     }
 
     if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
 
     return (
