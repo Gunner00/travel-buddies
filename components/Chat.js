@@ -50,7 +50,7 @@ function Chat() {
   async function fetchMessages() {
     const { data, error } = await supabase
       .from('messages')
-      .select('*')
+      .select('content')
       .eq('conversation_id', getConversationId())
       .order('created_at');
 
