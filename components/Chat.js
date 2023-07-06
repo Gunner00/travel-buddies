@@ -5,6 +5,7 @@ function Chat() {
     const [currentUser, setCurrentUser] = useState(null);
     const [recipientUser, setRecipientUser] = useState(null);
     const [messages, setMessages] = useState([]);
+    const [newMessage, setNewMessage] = useState([]);
 
     useEffect(() => {
       fetchCurrentUser();
