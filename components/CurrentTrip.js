@@ -175,7 +175,7 @@ export default function CurrentTrip() {
     }
 //opens the chat feature upon click
     const handleChat = () => {
-        router.push("/pages/chat.html");
+        router.push("/chat.html");
     }
     return (
         <>
