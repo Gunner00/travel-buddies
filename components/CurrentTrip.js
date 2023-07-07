@@ -173,7 +173,7 @@ export default function CurrentTrip() {
     if (!isLoaded) {
         return <div>Loading...</div>
     }
-
+//opens the chat feature upon click
     const handleChat = () => {
         router.push("/chat");
     }

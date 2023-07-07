@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link href="https://bootswatch.com/5/litera/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="container main-area">
+        <ul class="list-unstyled" id="messages">
+            <!--DYNAMIC-->
+        </ul>
+        <form class="form">
+            <fieldset>
+                <div class="form-group">
+                    <label for="username" class="form-label mt-4">Username</label>
+                    <input name="username" type="text" class="form-control" id="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="content" class="form-label mt-4">Message</label>
+                    <textarea name="content" class="form-control" id="content" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </fieldset>
+        </form>
+    </div>
+    <script src="../components/Chat.js"></script>
+</body>
+</html>
