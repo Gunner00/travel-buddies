@@ -6,11 +6,6 @@ const ChatPage = dynamic(() => import('../components/Chat'), { ssr: false });
 
 const Chat = () => (
   <>
-    <Head>
-      <title>Chat</title>
-      <link href="https://bootswatch.com/5/litera/bootstrap.css" rel="stylesheet" />
-      <link rel="stylesheet" href="../styles/global.css" />
-    </Head>
     <ChatPage />
   </>
 );
