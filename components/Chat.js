@@ -53,58 +53,61 @@ const Chat = () => {
   };
 
   return (
-    <div>
-      <ul id="messages">
+    <div className="container main-area">
+      <ul className="list-unstyled" id="messages">
         {messages.map((message) => (
-          <li key={message.id}>
-            <div>
-              <div>
-                <div>
+          <li key={message.id} className="card m-2">
+            <div className="card-body">
+              <div className="row">
+                <div className="col-sm-2 avatar-container">
                   <Avatar
                     url={message.avatar_url}
+                    className="w-20 h-20 rounded-full"
                     showUpload={false}
                   />
-                  <p>{message.username}</p>
+                  <p className="avatar-username">{message.username}</p>
                 </div>
-                <div>
+                <div className="col-sm-10">
                   <p>{message.content}</p>
                 </div>
               </div>
-              <div>
-                <p>{message.created_at}</p>
+              <div className="row">
+                <p className="col-sm-12 timestamp">{message.created_at}</p>
               </div>
             </div>
           </li>
         ))}
       </ul>
-      <form onSubmit={addMessage}>
+      <form className="form" onSubmit={addMessage}>
         <fieldset>
-          <div>
-            <label htmlFor="username">
+          <div className="form-group">
+            <label htmlFor="username" className="form-label mt-4">
               Username
             </label>
             <input
               name="username"
               type="text"
+              className="form-control"
               id="username"
               placeholder="Enter username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div>
-            <label htmlFor="content">
+          <div className="form-group">
+            <label htmlFor="content" className="form-label mt-4">
               Message
             </label>
             <textarea
               name="content"
+              className="form-control"
               id="content"
               rows="2"
               value={content}
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit">
+          <button type="submit" className="btn btn-primary">
             Send
           </button>
         </fieldset>
