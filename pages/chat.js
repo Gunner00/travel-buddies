@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import "../styles/styles.css"
 
 const ChatPage = dynamic(() => import('../components/Chat'), { ssr: false });
 
