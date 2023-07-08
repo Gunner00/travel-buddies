@@ -25,8 +25,8 @@ const Chat = () => {
     }
   };
 
-  const subscribeToMessages = () => {
-    supabase
+  const subscribeToMessages = async () => {
+    const {data, error} = await supabase
       .from('messages')
       .on('INSERT', (payload) => {
         setMessages((prevMessages) => [...prevMessages, payload.new]);
