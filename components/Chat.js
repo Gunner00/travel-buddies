@@ -79,7 +79,7 @@ const Chat = () => {
           </li>
         ))}
       </ul>
-      <form className="form" onSubmit={addMessage}>
+      <form className="flex flex-col gap-4 w-full sm:w-60" onSubmit={addMessage}>
         <fieldset>
           <div className="form-group">
             <label htmlFor="username" className="form-label mt-4">
@@ -88,7 +88,7 @@ const Chat = () => {
             <input
               name="username"
               type="text"
-              className="form-control"
+              className="interBody block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
               id="username"
               placeholder="Enter username"
               value={username}
@@ -101,14 +101,14 @@ const Chat = () => {
             </label>
             <textarea
               name="content"
-              className="form-control"
+              className="interBody block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
               id="content"
               rows="2"
               value={content}
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             Send
           </button>
         </fieldset>
