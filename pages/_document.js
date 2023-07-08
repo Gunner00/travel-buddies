@@ -17,8 +17,6 @@ class MyDocument extends Document {
                         rel="stylesheet"
                         href="https://rsms.me/inter/inter.css"
                     />
-                    <link href="https://bootswatch.com/5/litera/bootstrap.css" rel="stylesheet" />
-      <link rel="stylesheet" href="../styles/global.css" />
                 </Head>
                 <body>
                     <Main />
