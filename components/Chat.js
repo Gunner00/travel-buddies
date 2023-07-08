@@ -33,10 +33,10 @@ const Chat = () => {
           setMessages((prevMessages) => [...prevMessages, payload.new]);
         })
         .subscribe();
-  
+
       // Store the subscription object if needed
       // You can later unsubscribe by calling `subscription.unsubscribe()`
-  
+
     } catch (error) {
       console.error('Error subscribing to messages:', error);
     }
