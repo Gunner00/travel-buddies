@@ -1,13 +1,8 @@
 import React from 'react';
-import Head from 'next/head';
-import dynamic from 'next/dynamic';
+import Chat from '../components/Chat';
 
-const ChatPage = dynamic(() => import('../components/Chat'), { ssr: false });
-
-const Chat = () => (
-  <>
-    <ChatPage />
-  </>
-);
-
-export default Chat;
+export default function chat() {
+  return(
+    <div><Chat/></div>
+  )
+}
