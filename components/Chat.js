@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import Avatar from './Avatar';
-import 'bootstrap/dist/css/bootstrap.css';
 
-const Chat = () => {
+export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
@@ -116,5 +115,3 @@ const Chat = () => {
     </div>
   );
 };
-
-export default Chat;
