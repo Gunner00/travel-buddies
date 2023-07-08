@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
 html {
   scroll-behavior: smooth;
 }
