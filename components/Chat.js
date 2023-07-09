@@ -6,8 +6,6 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
-  const [buddy, setBuddy] = useState(null);
-
 
   useEffect(() => {
     fetchMessages();
@@ -27,13 +25,6 @@ const Chat = () => {
     }
   };
 
-  const fetchUsername = async () => {
-    let { data: profiles, error } = await supabase
-      .from('profiles')
-      .select('username')
-      setUsername(username);
-  }
-  
   const subscribeToMessages = async () => {
     supabase
   .channel('any')
@@ -56,7 +47,7 @@ const Chat = () => {
 
     try {
       await supabase.from('messages').insert(newMessage);
-      setUsername(e.target.value);
+      setUsername(username);
       setContent('');
     } catch (error) {
       console.error('Error sending message:', error);
@@ -102,7 +93,7 @@ const Chat = () => {
               id="username"
               placeholder="Enter username"
               value={username}
-              onChange={(e) => setUsername(username)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="form-group">
