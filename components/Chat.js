@@ -62,7 +62,6 @@ const Chat = () => {
   return (
     <>
     <UniversalFadeAnimation>
-    <UniversalFadeAnimation>
                     <h1 className="interSubheader fixed top-4 left-4 shadow-2xl bg-black text-white px-3 py-2 rounded-full">
                         Travel Buddies
                     </h1>
@@ -116,14 +115,13 @@ const Chat = () => {
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             Send
           </button>
         </fieldset>
       </form>
       <div ref={smoothScroll} />
     </div>
-    </UniversalFadeAnimation>
     </>
   );
 };
