@@ -9,6 +9,7 @@ const Chat = () => {
   useEffect(() => {
     fetchMessages();
     subscribeToMessages();
+    target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
   }, []);
 
   const fetchMessages = async () => {
