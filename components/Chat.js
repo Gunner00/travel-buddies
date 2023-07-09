@@ -26,8 +26,8 @@ const Chat = () => {
   };
 
   const subscribeToMessages = async () => {
-    supabase.from('messages').on('INSERT', payload => {
-      console.log('Change Receieved!', payload)
+    supabase.from('messages').on('INSERT', message => {
+      console.log('Change Receieved!', message)
     })
     .subscribe();
   }
