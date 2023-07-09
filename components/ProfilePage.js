@@ -333,7 +333,7 @@ export default function Account({ session }) {
                         </form>
                     </section>
                 </div>
-            
+                </UniversalFadeAnimation>
             {filledInfo && (
                 <button
                     className="fixed flex rounded-full justify-center items-center gap-4 bottom-5 left-0 right-0 w-[95vw] m-auto bg-black text-white text-2xl font-medium px-10 py-4"
@@ -354,7 +354,6 @@ export default function Account({ session }) {
                     </svg>
                 </button>
             )}
-            </UniversalFadeAnimation>
         </>
     );
 }
