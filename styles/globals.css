@@ -33,12 +33,12 @@ html {
 }
 
 .avatar-username {
-  font-size: 10px;
+  font-size: 30px;
 }
 
 .timestamp {
   text-align: right;
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .main-area {
