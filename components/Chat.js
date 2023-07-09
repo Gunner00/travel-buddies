@@ -50,6 +50,7 @@ const Chat = () => {
 
     try {
       await supabase.from('messages').insert(newMessage);
+      setUsername(username);
       setContent('');
     } catch (error) {
       console.error('Error sending message:', error);
