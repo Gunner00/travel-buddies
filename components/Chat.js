@@ -5,6 +5,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
+  const dummy = useRef()
 
   useEffect(() => {
     fetchMessages();
@@ -33,7 +34,7 @@ const Chat = () => {
   })
   .subscribe()
   setTimeout(() => {
-    Element.scrollIntoView({ behavior: 'smooth'});
+    dummy.current.scrollIntoView({ behavior: 'smooth'});
   }, 300);
   }
 
@@ -111,6 +112,7 @@ const Chat = () => {
           </button>
         </fieldset>
       </form>
+      <div ref={dummy}></div>
     </div>
   );
 };
