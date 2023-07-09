@@ -68,7 +68,7 @@ const Chat = () => {
                 <div className="col-sm-2 avatar-container">
                   <p className="avatar-username">{message.username}</p>
                 </div>
-                <div className="col-sm-10">
+                <div className="interBody block text-sm font-small text-gray-700">
                   <p>{message.content}</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ const Chat = () => {
       <form className="form" onSubmit={addMessage}>
         <fieldset>
           <div className="form-group">
-            <label htmlFor="username" className="form-label mt-4">
+            <label htmlFor="username" className="interBody block text-sm font-medium text-gray-700">
               Username
             </label>
             <input
@@ -96,7 +96,7 @@ const Chat = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="content" className="form-label mt-4">
+            <label htmlFor="content" className="interBody block text-sm font-medium text-gray-700">
               Message
             </label>
             <textarea
