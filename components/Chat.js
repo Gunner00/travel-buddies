@@ -1,6 +1,5 @@
-import { react, useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
-import Avatar from './Avatar';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
