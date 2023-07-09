@@ -27,21 +27,19 @@ const Chat = () => {
 
   const subscribeToMessages = async () => {
     try {
-      const { data: messages, error } = await supabase
+      const subscription = supabase
         .from('messages')
         .on('INSERT', (payload) => {
           setMessages((prevMessages) => [...prevMessages, payload.new]);
         })
         .subscribe();
   
-      if (error) {
-        console.error('Error subscribing to messages:', error);
-      }
+      // Store the subscription object if needed
+      // You can later unsubscribe by calling `subscription.unsubscribe()`
     } catch (error) {
       console.error('Error subscribing to messages:', error);
     }
   };
-  
   
 
   const addMessage = async () => {
