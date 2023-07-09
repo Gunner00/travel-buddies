@@ -83,7 +83,7 @@ const Chat = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="username" className="interBody block text-sm font-medium text-gray-700">
-              Username
+              Name
             </label>
             <input
               name="username"
@@ -107,10 +107,10 @@ const Chat = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary">
             Send
           </button>
+          </div>
         </fieldset>
       </form>
       <div ref={smoothScroll} />
