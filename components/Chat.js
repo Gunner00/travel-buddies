@@ -26,34 +26,16 @@ const Chat = () => {
   };
 
   const subscribeToMessages = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('messages')
-        .on('*', (payload) => {
-          if (payload.eventType === 'INSERT') {
-            setMessages((prevMessages) => [...prevMessages, payload.new]);
-          } else if (payload.eventType === 'UPDATE') {
-            setMessages((prevMessages) =>
-              prevMessages.map((message) =>
-                message.id === payload.new.id ? payload.new : message
-              )
-            );
-          } else if (payload.eventType === 'DELETE') {
-            setMessages((prevMessages) =>
-              prevMessages.filter((message) => message.id !== payload.old.id)
-            );
-          }
-        })
-        .subscribe();
-  
-      if (error) {
-        console.error('Error subscribing to messages:', error);
-      }
-    } catch (error) {
-      console.error('Error subscribing to messages:', error);
+    supabase.channel('custom-insert-channel')
+  .on(
+    'postgres_changes',
+    { event: 'INSERT', schema: 'public', table: 'messages' },
+    (payload) => {
+      console.log('Change received!', payload)
     }
-  };
-  
+  )
+  .subscribe()
+  }
   
 
   const addMessage = async () => {
