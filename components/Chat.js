@@ -27,19 +27,33 @@ const Chat = () => {
 
   const subscribeToMessages = async () => {
     try {
-      const subscription = supabase
+      const { data, error } = await supabase
         .from('messages')
-        .on('INSERT', (payload) => {
-          setMessages((prevMessages) => [...prevMessages, payload.new]);
+        .on('*', (payload) => {
+          if (payload.eventType === 'INSERT') {
+            setMessages((prevMessages) => [...prevMessages, payload.new]);
+          } else if (payload.eventType === 'UPDATE') {
+            setMessages((prevMessages) =>
+              prevMessages.map((message) =>
+                message.id === payload.new.id ? payload.new : message
+              )
+            );
+          } else if (payload.eventType === 'DELETE') {
+            setMessages((prevMessages) =>
+              prevMessages.filter((message) => message.id !== payload.old.id)
+            );
+          }
         })
         .subscribe();
   
-      // Store the subscription object if needed
-      // You can later unsubscribe by calling `subscription.unsubscribe()`
+      if (error) {
+        console.error('Error subscribing to messages:', error);
+      }
     } catch (error) {
       console.error('Error subscribing to messages:', error);
     }
   };
+  
   
 
   const addMessage = async () => {
