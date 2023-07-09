@@ -46,6 +46,7 @@ const Chat = () => {
     };
 
     try {
+      event.preventDefault();
       await supabase.from('messages').insert(newMessage);
       setContent('');
     } catch (error) {
