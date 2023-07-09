@@ -66,9 +66,9 @@ export default function Avatar({ url, size, onUpload, showUpload = true, classNa
             )}
             {showUpload && (
                 <div className="mt-2">
-                    <label className="interBody" htmlFor="single">
+                    <button className="interBody" htmlFor="single">
                         {uploading ? "Uploading ..." : "Upload a file"}
-                    </label>
+                    </button>
                     <input
                         className="hidden absolute"
                         type="file"
