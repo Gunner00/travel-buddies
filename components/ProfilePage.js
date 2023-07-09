@@ -344,7 +344,7 @@ export default function Account({ session }) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className="w-3 h-3"
+                        className="w-6 h-6"
                     >
                         <path
                             fillRule="evenodd"
