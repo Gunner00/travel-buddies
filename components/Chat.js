@@ -6,6 +6,8 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
+  const [buddy, setBuddy] = useState(null);
+
 
   useEffect(() => {
     fetchMessages();
