@@ -29,7 +29,7 @@ const Chat = () => {
     try {
       const subscription = supabase
         .from('messages')
-        .on('INSERT', (message) => {
+        .insert('INSERT', (message) => {
           setMessages((prevMessages) => [...prevMessages, message.new]);
         })
         .subscribe();
