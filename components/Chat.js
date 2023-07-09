@@ -93,7 +93,7 @@ const Chat = () => {
               type="text"
               className="form-control"
               id="username"
-              placeholder="Enter username"
+              placeholder="Enter Name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
