@@ -1,5 +1,6 @@
 import { React, useRef, useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
+import UniversalFadeAnimation from "./UniversalFadeComponent";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -59,6 +60,12 @@ const Chat = () => {
   };
 
   return (
+    <>
+    <UniversalFadeAnimation>
+                    <h1 className="interSubheader fixed top-4 left-4 shadow-2xl bg-black text-white px-3 py-2 rounded-full">
+                        Travel Buddies
+                    </h1>
+    </UniversalFadeAnimation>
     <div className="container main-area">
       <ul className="list-unstyled" id="messages">
         {messages.map((message) => (
@@ -115,6 +122,7 @@ const Chat = () => {
       </form>
       <div ref={smoothScroll} />
     </div>
+    </>
   );
 };
 
