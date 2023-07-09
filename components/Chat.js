@@ -26,17 +26,13 @@ const Chat = () => {
   };
 
   const subscribeToMessages = async () => {
-    supabase.channel('custom-insert-channel')
-  .on(
-    'postgres_changes',
-    { event: 'INSERT', schema: 'public', table: 'messages' },
-    (message) => {
-      console.log('Change received!', message)
-    }
-  )
+    supabase
+  .channel('any')
+  .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, message => {
+    console.log('Change received!', message)
+  })
   .subscribe()
   }
-  
 
   const addMessage = async () => {
     if (!username || !content) {
