@@ -62,11 +62,6 @@ const Chat = () => {
             <div className="card-body">
               <div className="row">
                 <div className="col-sm-2 avatar-container">
-                <Avatar
-                        url={buddy?.avatar_url}
-                        className="w-20 h-20 rounded-full"
-                        showUpload={false}
-                    />
                   <p className="avatar-username">{message.username}</p>
                 </div>
                 <div className="col-sm-10">
