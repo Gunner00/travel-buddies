@@ -27,6 +27,13 @@ const Chat = () => {
     }
   };
 
+  const fetchUsername = async () => {
+    let { data: profiles, error } = await supabase
+      .from('profiles')
+      .select('username')
+      setUsername(username);
+  }
+  
   const subscribeToMessages = async () => {
     supabase
   .channel('any')
@@ -95,7 +102,7 @@ const Chat = () => {
               id="username"
               placeholder="Enter username"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(username)}
             />
           </div>
           <div className="form-group">
