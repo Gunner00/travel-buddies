@@ -29,6 +29,7 @@ const Chat = () => {
     supabase
   .channel('any')
   .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, message => {
+    fetchMessages(message.new);
     console.log('Change received!', message)
   })
   .subscribe()
