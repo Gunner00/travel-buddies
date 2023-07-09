@@ -5,7 +5,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
-  const dummy = useRef()
+  const smoothScroll = useRef(null);
 
   useEffect(() => {
     fetchMessages();
@@ -25,6 +25,10 @@ const Chat = () => {
     }
   };
 
+  useEffect(() => {
+    smoothScroll.current?.scrollIntoView();
+  }, [messages]);
+
   const subscribeToMessages = async () => {
     supabase
   .channel('any')
@@ -33,9 +37,6 @@ const Chat = () => {
     console.log('Change received!', message)
   })
   .subscribe()
-  setTimeout(() => {
-    dummy.current.scrollIntoView({ behavior: 'smooth'});
-  }, 300);
   }
 
   const addMessage = async () => {
@@ -112,7 +113,7 @@ const Chat = () => {
           </button>
         </fieldset>
       </form>
-      <div ref={dummy}></div>
+      <div ref={smoothScroll} />
     </div>
   );
 };
