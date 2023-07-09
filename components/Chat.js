@@ -107,10 +107,10 @@ const Chat = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
-            <button type="submit" className="btn btn-primary">
+          </div>
+          <button type="submit" className="btn btn-primary">
             Send
           </button>
-          </div>
         </fieldset>
       </form>
       <div ref={smoothScroll} />
