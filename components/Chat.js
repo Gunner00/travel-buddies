@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { react, useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import Avatar from './Avatar';
 
@@ -47,7 +47,6 @@ const Chat = () => {
 
     try {
       await supabase.from('messages').insert(newMessage);
-      setUsername(username);
       setContent('');
     } catch (error) {
       console.error('Error sending message:', error);
