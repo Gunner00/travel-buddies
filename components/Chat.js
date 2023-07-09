@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useRef, useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 
 const Chat = () => {
