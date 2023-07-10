@@ -7,6 +7,8 @@ const Chat = () => {
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
   const smoothScroll = useRef(null);
+  const router = useRouter();
+
 
   useEffect(() => {
     fetchMessages();
