@@ -5,11 +5,11 @@ export default function CongratulationsPage() {
     const router = useRouter();
 
     return (
-        <div>
-            <h2 className="interSubheader absolute top-4 z-10 left-4 shadow-2xl bg-black text-white px-3 py-2 rounded-full">
-                Congratulations on completing your trip! Click below to go to
-                the home page.
-            </h2>
+        <div className="flex flex-col gap-14 pt-20 md:flex-row justify-center items-center p-10 lg:p-20">
+                    <section className="flex flex-col justify-center items-center lg:w-1/2">
+                        <h1 className="interHeader text-center"> Congratulations on completing your trip! Click below to go to
+                the home page.</h1>
+                </section>
             <button
                 onClick={() => {
                     router.push("/startTripPage")
