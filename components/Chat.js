@@ -1,6 +1,6 @@
 import { React, useRef, useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
-import UniversalFadeAnimation from "./UniversalFadeComponent";
+import { useRouter } from 'next/router';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -39,6 +39,10 @@ const Chat = () => {
   })
   .subscribe()
   }
+  
+const handleGoBack = () => {
+  router.push("/currentTrip");
+}
 
   const addMessage = async () => {
     if (!username || !content) {
@@ -117,7 +121,7 @@ const Chat = () => {
           </button>
                 <button
                     className="inline-flex absolute bottom-8 left-4 items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    onClick={() => {router.push("/currentTrip");}}
+                    onClick={() => handleGoBack()}
                 >
                     Back
                 </button>
