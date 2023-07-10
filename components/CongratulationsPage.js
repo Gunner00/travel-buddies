@@ -7,8 +7,7 @@ export default function CongratulationsPage() {
     return (
         <div className="flex flex-col gap-14 pt-20 md:flex-row justify-center items-center p-10 lg:p-20">
                     <section className="flex flex-col justify-center items-center lg:w-1/2">
-                        <h1 className="interHeader text-center"> Congratulations on completing your trip! Click below to go to
-                the home page.</h1>
+                        <h1 className="interHeader text-center"> Congratulations on completing your trip! Click to go find another buddy.</h1>
                 </section>
             <button
                 onClick={() => {
@@ -16,7 +15,7 @@ export default function CongratulationsPage() {
                 }}
                 className="w-[95vw] bg-black text-white text-2xl font-medium px-10 py-4 rounded-xl"
                 disabled={false}
-            ></button>
+            >New Trip</button>
         </div>
     );
 }
