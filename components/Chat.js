@@ -116,6 +116,14 @@ const Chat = () => {
             Send
           </button>
           </div>
+          <div>
+                <button
+                    className="inline-flex absolute bottom-8 left-4 items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    onClick={() => {router.push("/currentTrip");}}
+                >
+                    Back
+                </button>
+            </div>
         </fieldset>
       </form>
       <div ref={smoothScroll} />
