@@ -15,6 +15,8 @@ const Chat = () => {
     subscribeToMessages();
   }, []);
 
+//getting messages from the database
+
   const fetchMessages = async () => {
     try {
       const { data, error } = await supabase.from('messages').select('*');
@@ -28,9 +30,13 @@ const Chat = () => {
     }
   };
 
+//function for enabling smooth scrolling
+
   useEffect(() => {
     smoothScroll.current?.scrollIntoView();
   }, [messages]);
+
+//function to send messages to database
 
   const subscribeToMessages = async () => {
     supabase
@@ -42,10 +48,13 @@ const Chat = () => {
   .subscribe()
   }
   
+//function to route
+
 const handleGoBack = () => {
   router.push("/currentTrip");
 }
 
+//displaying message on the screen
   const addMessage = async () => {
     if (!username || !content) {
       return;

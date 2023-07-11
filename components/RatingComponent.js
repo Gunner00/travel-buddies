@@ -37,7 +37,7 @@ export default function RatingComponent() {
 
         return session.user;
     }
-
+//gets the ID of user's buddy
     async function handleRating(rate) {
         let rating_converted = rate;
         const { data: select_d, error: select_e } = await supabase
@@ -50,7 +50,7 @@ export default function RatingComponent() {
         console.log("select_d", select_d);
         console.log(select_d.num_ratings);
         console.log(select_d.avg_rating);
-
+//formula for calculating the rating
         var newRating =
             (select_d.num_ratings * select_d.avg_rating + rating_converted) /
             (select_d.num_ratings + 1);

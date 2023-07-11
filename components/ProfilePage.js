@@ -31,7 +31,7 @@ export default function Account({ session }) {
             });
         }
     }, []);
-
+//checks if the user is already authenticated/logged in
     async function getCurrentUser() {
         const {
             data: { session },
@@ -48,7 +48,7 @@ export default function Account({ session }) {
 
         return session.user;
     }
-
+//storing user data
     async function getProfile() {
         try {
             setLoading(true);
@@ -84,7 +84,7 @@ export default function Account({ session }) {
             setLoading(false);
         }
     }
-
+//updating the user data if any change is made
     async function updateProfile({
         username,
         firstname,
@@ -133,7 +133,7 @@ export default function Account({ session }) {
         }
     };
       
-
+//checks if the user has filled all the infor
     let checkIfUserFilledInfo = async () => {
         try {
             setLoading(true);

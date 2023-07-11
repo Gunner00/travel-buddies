@@ -18,13 +18,6 @@ const customAnimation = keyframes`
 // the user's viewport. It's a great way to make a page fade in as the user scrolls
 // down. Again, just wrap all significant divs in it. All of the children divs will be
 // animated on scroll. No need to repeatedly wrap each div in the component.
-// Take a look at the Home.tsx and Categories.tsx page to see how I specifically
-// wrap the important divs in the UniversalFadeAnimation.
-// Thanks React-Awesome-Reveal!
-
-// CURRENT OPTIONS: 
-//  - Don't define animationType = defaults to Reveal with custom fade up animation.
-//  - Define animationType = "appear" to use a less jarring animation that just slowly appears.
 export default function UniversalFadeAnimation({
     children,
     animationType = "fadeUp",

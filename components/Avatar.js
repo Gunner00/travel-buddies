@@ -9,6 +9,8 @@ export default function Avatar({ url, size, onUpload, showUpload = true, classNa
         if (url) downloadImage(url);
     }, [url]);
 
+//downloading the uploaded image
+
     async function downloadImage(path) {
         try {
             const { data, error } = await supabase.storage
@@ -23,6 +25,8 @@ export default function Avatar({ url, size, onUpload, showUpload = true, classNa
             console.log("Error downloading image: ", error.message);
         }
     }
+
+//function to allow users to upload an image
 
     async function uploadAvatar(event) {
         try {
